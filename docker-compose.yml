@@ -11,6 +11,7 @@ services:
       - "${MYSQL_PORT}:3306"
     volumes:
       - ${MYSQL_DATA_DIR}:/var/lib/mysql
+    restart: always
 
   pma:
     image: phpmyadmin/phpmyadmin
@@ -27,3 +28,5 @@ services:
       - db_server
     links:
       - db_server:db
+    restart: always
+
